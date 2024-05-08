@@ -7,6 +7,7 @@
         <link rel="stylesheet" media="all" href="lib/angular-1.2.0/angular-csp.css">
         <link rel="stylesheet" media="all" href="css/main.css">
         <base target="_blank">
+        <style>html{min-width:800px;min-height:600px;}</style>
     </head>
     <body data-ng-controller="RegexpController">
         <aside ng-controller="AsideController" class="open-panel-aside">
@@ -35,7 +36,7 @@
                             <span class="glyphicon glyphicon-question-sign" ng-click="openHelpDialog()"></span>
                         </span>
                         <div class="input-group" ng-class="{'has-error':invalidPattern}">
-                            <input popover-placement="bottom" popover-popup-delay="1500" popover-trigger="mouseenter" popover="Place a regexp to test here." ng-model="data.regexp" type="text" class="form-control" id="regexp" placeholder="Enter a regexp to test" />
+                            <input popover-placement="bottom" popover-popup-delay="1500" popover-trigger="mouseenter" popover-content="Place a regexp to test here." ng-model="data.regexp" type="text" class="form-control" id="regexp" placeholder="Enter a regexp to test" />
                             <span class="input-group-addon">
                                 <label class="normal"><input type="checkbox" class="middle" ng-model="data.autotest"> autotest</label>
                             </span>
@@ -44,26 +45,26 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 form-group">
-                        <label class="checkbox-inline" popover-placement="right" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover="Perform a global (in whole search text) evaluation">
+                        <label class="checkbox-inline" popover-placement="right" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover-content="Perform a global (in whole search text) evaluation">
                             <input type="checkbox" value="g" ng-model="data.global"> global
                         </label>
-                        <label class="checkbox-inline"  popover-placement="bottom" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover="Evaluate an expression in multilines (if any).">
+                        <label class="checkbox-inline"  popover-placement="bottom" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover-content="Evaluate an expression in multilines (if any).">
                             <input type="checkbox" value="m" ng-model="data.multiline"> multiline
                         </label>
-                        <label class="checkbox-inline" popover-placement="bottom" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover="Will not mind char case">
+                        <label class="checkbox-inline" popover-placement="bottom" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover-content="Will not mind char case">
                             <input type="checkbox" value="i" ng-model="data.insensitive"> case insensitive
                         </label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 form-group">
-                        <label for="searchText" popover-placement="right" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover="Search string. Matches will be hightlighted in result window.">Test text</label>
+                        <label for="searchText" popover-placement="right" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover-content="Search string. Matches will be hightlighted in result window.">Test text</label>
                         <textarea class="form-control" id="searchText" rows="3" ng-model="data.search" placeholder="Enter test text on which regexp will be performed"></textarea>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 form-group">
-                        <label for="replaceText" popover-placement="right" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover="Replace matched to this input value. You can use group symbol to insert founded group (eg. $1)">Replace text</label>
+                        <label for="replaceText" popover-placement="right" tooltip-append-to-body="true" popover-popup-delay="500" popover-trigger="mouseenter" popover-content="Replace matched to this input value. You can use group symbol to insert founded group (eg. $1)">Replace text</label>
                         <textarea class="form-control" id="replaceText" rows="3" ng-model="data.replace" ng-trim="false" placeholder="Enter replacement if you want to replace highlighted text"></textarea>
                     </div>
                 </div>
