@@ -46,8 +46,12 @@ function RegexpController($scope, $RegexpValues, $RegexpWorker, $OpenSaveService
         });
     };
     function testPattern() {
+        if(!$scope.data.regexp){
+            $scope.invalidPattern = true;
+            return;
+        }
         try {
-            new RegExp('(' + $scope.data.regexp + ')', $RegexpValues.modifiers);
+            new RegExp($scope.data.regexp, $RegexpValues.modifiers);
         } catch (e) {
             $scope.invalidPattern = true;
             return;
